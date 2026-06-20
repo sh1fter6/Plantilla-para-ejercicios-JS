@@ -1,32 +1,64 @@
-# Plantilla de Consola Interactiva para Ejercicios JS
+# 🧩 Plantillas para Ejercicios JS
 
-Esta plantilla te permite crear una serie de ejercicios o retos en JavaScript y ejecutarlos en pantalla sin necesidad de configurar manualmente un selector o usar la consola nativa del navegador (F12).
+Colección de plantillas visuales para hacer ejercicios de JavaScript de forma más cómoda, sin necesidad de usar la consola nativa del navegador (F12).
 
-## ¿Cómo utilizar esta plantilla?
+Cada carpeta es una plantilla independiente con su propio tema visual, creada por un colaborador diferente.
 
-1. **Copia los archivos de la plantilla:**
-   Copia los siguientes archivos a tu nueva carpeta de ejercicios:
-   * `index.html`
-   * `index.js`
-   * `styles.css`
-   * `styles.scss` (opcional, si quieres usar SASS)
+---
 
-2. **Crea tus archivos JavaScript de ejercicios:**
-   Simplemente crea archivos `.js` en la misma carpeta. La plantilla los detectará automáticamente (excluyendo `index.js`).
-   Por ejemplo:
-   * `ejercicio-1.js`
-   * `ejercicio-2.js`
-   * `desafio-final.js`
+## 📁 Plantillas disponibles
 
-3. **Usa `console.log` normalmente:**
-   Escribe tu código de JS usando `console.log()` común y corriente. Los logs se interceptarán y aparecerán de inmediato en la consola de pantalla.
+| Carpeta | Autor | Descripción |
+|---|---|---|
+| [T3RM1N4L](./T3RM1N4L/) | sh1fter6 | Consola hacker estilo terminal. Fondo negro, letra verde, detección automática de archivos JS. |
 
-4. **Agrega estilos de color (opcional):**
-   Puedes imprimir texto en color verde brillante usando la sintaxis `%c`:
-   ```javascript
-   console.log("%c¡Misión cumplida!", "color: #00ff00; font-weight: bold;");
+---
+
+## 🤝 ¿Cómo contribuir con tu propio tema?
+
+1. **Haz un fork** de este repositorio.
+
+2. **Copia la carpeta `T3RM1N4L`** y renómbrala con tu nombre o alias:
+   ```
+   TU-NOMBRE/
+   ├── index.html
+   ├── index.js
+   ├── styles.scss   ← Aquí defines tu tema
+   ├── styles.css    ← CSS compilado desde el SCSS
+   └── README.md
    ```
 
-5. **Levanta tu servidor local:**
-   Abre la carpeta en tu editor y lánzala con una extensión de servidor local como **Live Server** de VS Code.
-   * *Nota:* La autodetectación de archivos requiere que el proyecto sea servido localmente a través de HTTP (como hace Live Server) para poder escanear la estructura de la carpeta.
+3. **Edita `styles.scss`** para personalizar tu tema. Las variables están al inicio del archivo y son todo lo que necesitas tocar para cambiar colores, tipografía y tamaños:
+   ```scss
+   $bg-color:           #121212;   // Fondo de página
+   $terminal-bg:        #000000;   // Fondo de la consola
+   $terminal-header-bg: #1a1a1a;   // Fondo del encabezado
+   $green-primary:      #00ff00;   // Color principal (texto, bordes, hover)
+   $text-muted:         #888888;   // Color del texto secundario
+   $font-mono:          'Courier New', Courier, monospace;
+   ```
+
+> De todas formas, el codigo es libre de editarse como mas te guste. Esto es solo una sugerencia :3
+
+4. **Compila el SCSS a CSS** antes de subir tus cambios:
+
+   ```bash
+   npx sass styles.scss styles.css --no-source-map
+   ```
+
+5. **Añade una fila a la tabla de arriba** con tu nombre, carpeta y una descripción breve de tu tema.
+
+6. **Abre un Pull Request** desde tu fork. ¡Listo!
+
+---
+
+## ⚡ ¿Cómo usar una plantilla?
+
+1. Descarga o clona el repositorio.
+2. Entra a la carpeta de la plantilla que quieras usar.
+3. Crea tus archivos `.js` de ejercicios en esa misma carpeta.
+4. Abre la carpeta con **Live Server** (extensión de VS Code) y listo.
+
+---
+
+> Espero que lo disfruten :D La idea es que entre todos podamos enriquecer la colección con distintos estilos y hacer que practicar JavaScript sea un poco más visual, dinámico y divertido.
