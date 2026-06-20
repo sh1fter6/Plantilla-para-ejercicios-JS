@@ -25,6 +25,7 @@ Cada carpeta es una plantilla independiente con su propio tema visual, creada po
    ├── index.js
    ├── styles.scss   ← Aquí defines tu tema
    ├── styles.css    ← CSS compilado desde el SCSS
+   ├── retos.json    ← Lista de archivos JS a cargar
    └── README.md
    ```
 
@@ -46,9 +47,21 @@ Cada carpeta es una plantilla independiente con su propio tema visual, creada po
    npx sass styles.scss styles.css --no-source-map
    ```
 
-5. **Añade una fila a la tabla de arriba** con tu nombre, carpeta y una descripción breve de tu tema.
+5. **Añade tus archivos `.js`** en la carpeta y lístalos en `retos.json`:
 
-6. **Abre un Pull Request** desde tu fork. ¡Listo!
+   ```json
+   [
+     "ejercicio-1.js",
+     "ejercicio-2.js",
+     "mi-reto.js"
+   ]
+   ```
+
+   La plantilla los detectará automáticamente en ese orden.
+
+6. **Añade una fila a la tabla de arriba** con tu nombre, carpeta y una descripción breve de tu tema.
+
+7. **Abre un Pull Request** desde tu fork. ¡Listo!
 
 ---
 
@@ -56,8 +69,9 @@ Cada carpeta es una plantilla independiente con su propio tema visual, creada po
 
 1. Descarga o clona el repositorio.
 2. Entra a la carpeta de la plantilla que quieras usar.
-3. Crea tus archivos `.js` de ejercicios en esa misma carpeta.
+3. Crea tus archivos `.js` y añádelos a `retos.json` (ver formato en la sección de arriba).
 4. Abre la carpeta con **Live Server** (extensión de VS Code) y listo.
+
 
 ---
 
