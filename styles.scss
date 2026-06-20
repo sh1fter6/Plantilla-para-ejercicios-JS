@@ -3,6 +3,8 @@ $terminal-bg: #000000;
 $terminal-header-bg: #1a1a1a;
 $text-color: #ffffff;
 $green-primary: #00ff00;
+$error-color: #ff0000;
+$warn-color: #ffbd2e;
 $border-color: #333333;
 $text-muted: #888888;
 $font-mono: 'Courier New', Courier, monospace;
@@ -123,6 +125,20 @@ body {
     &__log-item {
         margin-bottom: 6px;
         white-space: pre-wrap;
+
+        &--error {
+            background-color: $error-color;
+            color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        &--warn {
+            background-color: $warn-color;
+            color: #000000;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
     }
 }
 

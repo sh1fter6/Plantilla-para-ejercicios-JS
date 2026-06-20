@@ -1,30 +1,45 @@
 const logOriginal = console.log;
+const errorOriginal = console.error;
+const warnOriginal = console.warn;
+
+function appendLog(texto, clase) {
+    const $logsDiv = $('#logs');
+    if (!$logsDiv.length) return;
+    const $nuevoLog = $('<div>').addClass(`terminal__log-item ${clase}`).text(texto);
+    $logsDiv.append($nuevoLog);
+    const $contenedor = $('#consola-pantalla');
+    $contenedor.scrollTop($contenedor[0].scrollHeight);
+}
 
 console.log = function(...args) {
     logOriginal.apply(console, args);
-    
     const $logsDiv = $('#logs');
     if ($logsDiv.length) {
         const $nuevoLog = $('<div>').addClass('terminal__log-item');
         let texto = args[0];
-        
         if (typeof texto === 'string' && texto.startsWith('%c')) {
             texto = texto.replace('%c', '');
-            $nuevoLog.css({
-                color: '#00ff00',
-                fontWeight: 'bold'
-            });
+            $nuevoLog.css({ color: '#00ff00', fontWeight: 'bold' });
             $nuevoLog.text(`> ${texto} ${args.slice(2).join(' ')}`);
         } else {
             $nuevoLog.text(`> ${args.join(' ')}`);
         }
-        
         $logsDiv.append($nuevoLog);
-        
         const $contenedor = $('#consola-pantalla');
         $contenedor.scrollTop($contenedor[0].scrollHeight);
     }
 };
+
+console.error = function(...args) {
+    errorOriginal.apply(console, args);
+    appendLog(`✖ ERROR: ${args.join(' ')}`, 'terminal__log-item--error');
+};
+
+console.warn = function(...args) {
+    warnOriginal.apply(console, args);
+    appendLog(`⚠ WARN: ${args.join(' ')}`, 'terminal__log-item--warn');
+};
+
 
 let retos = [];
 let indexActual = 0;
