@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consola de Ejercicios</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="app">
+    <h1 class="app__title"><i class="fa-solid fa-code"></i> Ejercicios JavaScript</h1>
+    <p class="app__description">Visualiza la ejecución de tus scripts de forma ordenada</p>
+
+    <div class="terminal">
+        <div class="terminal__header">
+            <div class="terminal__buttons">
+                <div class="terminal__dot terminal__dot--red"></div>
+                <div class="terminal__dot terminal__dot--yellow"></div>
+                <div class="terminal__dot terminal__dot--green"></div>
+            </div>
+            <div class="terminal__title" id="nombre-reto">Listo</div>
+            <div style="width: 50px;"></div>
+        </div>
+        <div class="terminal__body" id="consola-pantalla">
+            <div id="logs"></div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="custom-select">
+            <div class="custom-select__trigger">
+                <span id="nombre-reto-label">Cargando...</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="custom-select__options">
+                <!-- Se poblará dinámicamente desde index.js -->
+            </div>
+        </div>
+
+        <button id="btn-siguiente" class="controls__btn">Siguiente <i class="fa-solid fa-arrow-right"></i></button>
+        <button id="btn-reejecutar" class="controls__btn">Re-ejecutar <i class="fa-solid fa-arrows-rotate"></i></button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

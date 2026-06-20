@@ -1,0 +1,209 @@
+.u-flex, .controls, .terminal__buttons, .terminal__header, .app {
+  display: flex;
+}
+.u-flex--center, .controls, .app {
+  justify-content: center;
+  align-items: center;
+}
+.u-flex--column, .app {
+  flex-direction: column;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.app__title {
+  color: #00ff00;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+  margin-bottom: 5px;
+  font-size: 2rem;
+}
+@media (max-width: 480px) {
+  .app__title {
+    font-size: 1.5rem;
+  }
+}
+.app__description {
+  color: #888888;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .app__description {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+}
+
+.terminal {
+  width: 100%;
+  max-width: 650px;
+  background-color: #000000;
+  border: 2px solid #333333;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.terminal__header {
+  background-color: #1a1a1a;
+  padding: 10px 15px;
+  border-bottom: 1px solid #333333;
+  justify-content: space-between;
+  align-items: center;
+}
+.terminal__buttons {
+  gap: 6px;
+}
+.terminal__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.terminal__dot--red {
+  background-color: #ff5f56;
+}
+.terminal__dot--yellow {
+  background-color: #ffbd2e;
+}
+.terminal__dot--green {
+  background-color: #27c93f;
+}
+.terminal__title {
+  color: #888888;
+  font-size: 13px;
+  font-family: monospace;
+}
+.terminal__body {
+  padding: 20px;
+  height: 320px;
+  overflow-y: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #00ff00;
+  text-align: left;
+}
+@media (max-width: 480px) {
+  .terminal__body {
+    height: 250px;
+    font-size: 13px;
+    padding: 15px;
+  }
+}
+.terminal__log-item {
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+}
+
+.controls {
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 650px;
+}
+.controls__btn {
+  background-color: #1a1a1a;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  flex-grow: 1;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .controls__btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+.controls__btn:hover {
+  background-color: #00ff00;
+  color: #000000;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+
+.custom-select {
+  position: relative;
+  user-select: none;
+  font-family: "Courier New", Courier, monospace;
+  min-width: 250px;
+  flex-grow: 2;
+}
+@media (max-width: 480px) {
+  .custom-select {
+    width: 100%;
+  }
+}
+.custom-select__trigger {
+  background-color: #1a1a1a;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .custom-select__trigger {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+.custom-select__trigger:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+.custom-select__options {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background-color: #000000;
+  border: 1px solid #00ff00;
+  border-radius: 6px;
+  z-index: 100;
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+}
+.custom-select__option {
+  padding: 10px 15px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+@media (max-width: 480px) {
+  .custom-select__option {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+.custom-select__option:hover {
+  background-color: #00ff00;
+  color: #000000;
+}
+.custom-select--open .custom-select__options {
+  display: block;
+}
