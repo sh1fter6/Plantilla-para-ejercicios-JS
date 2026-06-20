@@ -46,38 +46,25 @@ let indexActual = 0;
 
 async function cargarListaRetos() {
     try {
-        const response = await fetch('.');
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        
-        const links = Array.from(doc.querySelectorAll('a'));
-        const archivos = links
-            .map(link => link.getAttribute('href'))
-            .filter(href => href && href.endsWith('.js') && href !== 'index.js')
-            .filter((value, index, self) => self.indexOf(value) === index);
+        const response = await fetch('retos.json');
+        const archivos = await response.json();
 
         retos = archivos.map(archivo => {
             const nombreBase = archivo.replace('.js', '');
-            const palabras = nombreBase.split(/[-_]/).map(word => {
-                return word.charAt(0).toUpperCase() + word.slice(1);
-            });
-            return {
-                nombre: palabras.join(' '),
-                archivo: archivo
-            };
+            const palabras = nombreBase.split(/[-_]/).map(word =>
+                word.charAt(0).toUpperCase() + word.slice(1)
+            );
+            return { nombre: palabras.join(' '), archivo };
         });
 
-        retos.sort((a, b) => a.archivo.localeCompare(b.archivo, undefined, {numeric: true, sensitivity: 'base'}));
-
     } catch (e) {
-        logOriginal("Error al escanear los archivos locales:", e);
+        logOriginal("No se encontró retos.json:", e);
         retos = [];
     }
 
     const $optionsContainer = $('.custom-select__options');
     $optionsContainer.empty();
-    
+
     if (retos.length === 0) {
         $('#nombre-reto-label').text("Sin archivos .js");
         $('#nombre-reto').text("Listo");
