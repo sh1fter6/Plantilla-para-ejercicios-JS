@@ -83,5 +83,7 @@ Cada carpeta es una plantilla independiente con su propio tema visual, creada po
 
 <img width="1920" height="1080" alt="imagen" src="https://github.com/user-attachments/assets/c9e8d850-fec6-40a2-9d15-928183800014" />
 <img width="1920" height="1070" alt="imagen" src="https://github.com/user-attachments/assets/0d6b8f6a-b0a8-4bc0-af3a-cdaacc51252c" />
+<img width="1920" height="1080" alt="imagen" src="https://github.com/user-attachments/assets/fb0c4036-be86-45fb-ac0c-6fb3a9d67b36" />
+
 
 
