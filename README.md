@@ -76,3 +76,12 @@ Cada carpeta es una plantilla independiente con su propio tema visual, creada po
 ---
 
 > Espero que lo disfruten :D La idea es que entre todos podamos enriquecer la colección con distintos estilos y hacer que practicar JavaScript sea un poco más visual, dinámico y divertido.
+
+
+
+## **Capturas* 
+
+<img width="1920" height="1080" alt="imagen" src="https://github.com/user-attachments/assets/c9e8d850-fec6-40a2-9d15-928183800014" />
+<img width="1920" height="1070" alt="imagen" src="https://github.com/user-attachments/assets/0d6b8f6a-b0a8-4bc0-af3a-cdaacc51252c" />
+
+
